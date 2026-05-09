@@ -24,6 +24,7 @@ with st.sidebar:
 
     # Convert to DataFrame
     df_outcomes = pd.DataFrame.from_dict(outcome_data, orient='index', columns=["Level"])
+    st.subheader("Final Grade")
     final_grade = st.selectbox("Desired Final Grade", outcome_options)
 with st.expander("Data Versions"):
     # Mapping text → numeric values
