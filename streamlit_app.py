@@ -23,21 +23,22 @@ with st.sidebar:
 
     # Convert to DataFrame
     df_outcomes = pd.DataFrame.from_dict(outcome_data, orient='index', columns=["Level"])
-# Mapping text → numeric values
-level_map = {
-    "Excellent": 5,
-    "High": 4,
-    "Standard": 3,
-    "Partial": 2,
-    "Limited": 1
-}
-
-# Create numeric version of the dataframe
-df_outcomes_numeric = df_outcomes.copy()
-df_outcomes_numeric["Value"] = df_outcomes_numeric["Level"].map(level_map)
-
-st.write("### 📊 Selected Outcomes")
-st.dataframe(df_outcomes)
-
-st.write("### 🔢 Numeric Outcome Values")
-st.dataframe(df_outcomes_numeric)
+with st.expander("Data Versions"):
+    # Mapping text → numeric values
+    level_map = {
+        "Excellent": 5,
+        "High": 4,
+        "Standard": 3,
+        "Partial": 2,
+        "Limited": 1
+    }
+    
+    # Create numeric version of the dataframe
+    df_outcomes_numeric = df_outcomes.copy()
+    df_outcomes_numeric["Value"] = df_outcomes_numeric["Level"].map(level_map)
+    
+    st.write("### 📊 Selected Outcomes")
+    st.dataframe(df_outcomes)
+    
+    st.write("### 🔢 Numeric Outcome Values")
+    st.dataframe(df_outcomes_numeric)
