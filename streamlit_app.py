@@ -5,4 +5,4 @@ import numpy as np
 
 st.title('🥇Grade Calculator')
 
-st.write('Hello world!')
+st.subheader("Previous Outcomes")
