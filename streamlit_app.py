@@ -42,3 +42,10 @@ with st.expander("Data Versions"):
     
     st.write("### 🔢 Numeric Outcome Values")
     st.dataframe(df_outcomes_numeric)
+
+total = 0
+for outcome in df_outcomes_numeric['Value'].items():
+    total += outcome
+average = total / num_outcomes
+
+    
