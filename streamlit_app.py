@@ -4,6 +4,9 @@ import plotly.express as px
 import numpy as np
 
 st.title('🥇Grade Calculator')
-
-st.subheader("Previous Outcomes")
-st.slider("Number of Outcomes in Semester", 1, 10, 5)
+with st.sidebar():
+  st.subheader("Previous Outcomes")
+  num_outcomes = st.slider("Number of Outcomes in Semester", 1, 10, 5)
+  for x in range(num_outcomes):
+    st.write("hi")
+    
