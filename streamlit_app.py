@@ -24,6 +24,7 @@ with st.sidebar:
 
     # Convert to DataFrame
     df_outcomes = pd.DataFrame.from_dict(outcome_data, orient='index', columns=["Level"])
+    final_grade = st.selectbox("Desired Final Grade", outcome_options)
 with st.expander("Data Versions"):
     # Mapping text → numeric values
     level_map = {
@@ -58,6 +59,6 @@ value_to_grade = {
 final_grade = value_to_grade.get(average, "Invalid")
 
 st.write("### 📈 Average Score:", round(average, 2))
-st.write("### 🏅 Final Grade:", final_grade)
+st.write("### 🏅 Current Grade:", final_grade)
 
     
