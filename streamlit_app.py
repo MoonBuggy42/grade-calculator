@@ -3,6 +3,6 @@ import pandas as pd
 import plotly.express as px
 import numpy as np
 
-st.title('Grade Calculator')
+st.title('🥇Grade Calculator')
 
 st.write('Hello world!')
