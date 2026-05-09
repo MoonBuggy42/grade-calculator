@@ -43,9 +43,21 @@ with st.expander("Data Versions"):
     st.write("### 🔢 Numeric Outcome Values")
     st.dataframe(df_outcomes_numeric)
 
-total = 0
-for outcome in df_outcomes_numeric['Value'].items():
-    total += outcome
-average = total / num_outcomes
+total = df_outcomes_numeric["Value"].sum()
+average = int(total / num_outcomes)
+
+value_to_grade = {
+    5: "Excellent",
+    4: "High",
+    3: "Standard",
+    2: "Partial",
+    1: "Limited"
+}
+
+final_grade = value_to_grade.get(rounded_down, "Invalid")
+
+st.write("### 📈 Average Score:", round(average, 2))
+st.write("### 🔻 Rounded Down:", rounded_down)
+st.write("### 🏅 Final Grade:", final_grade)
 
     
