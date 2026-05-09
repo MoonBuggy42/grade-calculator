@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import numpy as np
+import math
 
 st.title('🥇Grade Calculator')
 
@@ -54,10 +55,9 @@ value_to_grade = {
     1: "Limited"
 }
 
-final_grade = value_to_grade.get(rounded_down, "Invalid")
+final_grade = value_to_grade.get(average, "Invalid")
 
 st.write("### 📈 Average Score:", round(average, 2))
-st.write("### 🔻 Rounded Down:", rounded_down)
 st.write("### 🏅 Final Grade:", final_grade)
 
     
