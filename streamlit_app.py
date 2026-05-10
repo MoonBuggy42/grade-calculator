@@ -58,8 +58,8 @@ with st.expander("Data Versions"):
 
 total = df_outcomes_numeric["Value"].sum()
 average = total / num_outcomes
-rounded_down = math.floor(average)
-current_grade = value_to_grade.get(rounded_down, "Invalid")
+rounded = round(average)
+current_grade = value_to_grade.get(rounded, "Invalid")
 
 st.write("### 📈 Current Average Score:", round(average, 2))
 st.write("### 🏅 Current Grade:", current_grade)
@@ -81,7 +81,7 @@ total_outcomes = num_outcomes + outcomes_left
 for combo in all_combos:
     new_total = current_total + sum(combo)
     avg = new_total / total_outcomes
-    rounded = math.floor(avg)
+    rounded = round(avg)
 
     if rounded == target_value:
         valid_combos.append(combo)
