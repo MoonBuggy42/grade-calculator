@@ -26,6 +26,7 @@ with st.sidebar:
     df_outcomes = pd.DataFrame.from_dict(outcome_data, orient='index', columns=["Level"])
     st.subheader("Final Grade")
     final_grade = st.selectbox("Desired Final Grade", outcome_options)
+    outcomes_left = st.slider("Number of Outcomes Left", 1, 5, 3)
 with st.expander("Data Versions"):
     # Mapping text → numeric values
     level_map = {
@@ -61,5 +62,7 @@ final_grade = value_to_grade.get(average, "Invalid")
 
 st.write("### 📈 Average Score:", round(average, 2))
 st.write("### 🏅 Current Grade:", final_grade)
+
+ wanted_value = level_map[final_grade]
 
     
